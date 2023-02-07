@@ -1,0 +1,5 @@
+﻿  main.cpp
+D:\forvel\SFML_Race_33022\main.cpp(10,27): warning C4244: аргумент: преобразование "const float" в "unsigned int", возможна потеря данных
+D:\forvel\SFML_Race_33022\main.cpp(10,13): warning C4244: аргумент: преобразование "const float" в "unsigned int", возможна потеря данных
+D:\forvel\SFML_Race_33022\main.cpp(15,27): warning C4244: аргумент: преобразование "const float" в "unsigned int", возможна потеря данных
+  SFML_Race_33022.vcxproj -> D:\forvel\SFML_Race_33022\x64\Debug\SFML_Race_33022.exe
