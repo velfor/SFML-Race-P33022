@@ -1,6 +1,7 @@
 #include "settings.h"
 #include "road.h"
 #include "player.h"
+#include "obstacle.h"
 
 using namespace sf;
 
@@ -22,6 +23,8 @@ int main()
 	roadLayerInit(road2, Vector2f{ 100.f,-WINDOW_HEIGHT }, "road.jpg", 100.f);
 	Player player;
 	playerInit(player);
+	Obstacle obs1;
+	obstacleInit(obs1, "car.png");
 
 	while (window.isOpen())
 	{
@@ -40,6 +43,13 @@ int main()
 		roadLayerUpdate(road1);
 		roadLayerUpdate(road2);
 		playerUpdate(player);
+		obstacleUpdate(obs1);
+		// ѕроверка столкновений игрока и преп€тствий
+		FloatRect playerHitBox = player.sprite.getGlobalBounds();
+		FloatRect obs1HitBox = obs1.sprite.getGlobalBounds();
+		if (playerHitBox.intersects(obs1HitBox)) {
+			//действи€ при столкновении
+		}
 		// ќтрисовка окна
 		window.clear();
 		roadLayeDraw(window, grass1);
@@ -47,6 +57,7 @@ int main()
 		roadLayeDraw(window, road1);
 		roadLayeDraw(window, road2);
 		playerDraw(window, player);
+		//obstacleDraw(window, obs1);
 		window.display();
 	}
 
